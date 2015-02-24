@@ -5,7 +5,7 @@ ENV        DEBIAN_FRONTEND noninteractive
 ENV        PROMETHEUS_COMMIT 0ae2c1fc1820668972c0446f3a977a9e5c586058
 ENV        PUSHGATEWAY_COMMIT 3f1d42dade342ddb88381607358bae61a0a6b6c7
 ENV        ALERTMANAGER_COMMIT 25b925c6864d66cca9fffc3bae61169cd67e91d8
-ENV        CLOUDWATCHEXPORTER_COMMIT d66cf7c049db732a802eb690b41df71131e4427f
+ENV        CLOUDWATCHEXPORTER_COMMIT a2092e946da993a79a9294fdd6614f1f7e135a06
 
 RUN        apt-get -y update && \
            apt-get -y upgrade && \
@@ -35,7 +35,7 @@ RUN        git clone https://github.com/prometheus/pushgateway.git pushgateway-s
 		   cp bin/pushgateway /pushgateway && \
 		   cd .. && \
 		   rm -rf pushgateway-src
-		   
+
 RUN        git clone https://github.com/prometheus/alertmanager.git alertmanager-src && \
            cd alertmanager-src && \
 		   git reset --hard $ALERTMANAGER_COMMIT && \
